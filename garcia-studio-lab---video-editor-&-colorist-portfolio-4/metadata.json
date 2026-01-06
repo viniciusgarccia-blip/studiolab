@@ -1,0 +1,7 @@
+{
+  "name": "GARCIA STUDIO LAB - Video Editor & Colorist Portfolio",
+  "description": "A high-conversion landing page for a professional video editor and colorist, featuring cinematic design and interactive elements.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

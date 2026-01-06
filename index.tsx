@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom/client';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-import React, { useState, useEffect } from 'react';
+// Importações dos seus componentes
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -24,7 +24,6 @@ const App: React.FC = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    // Global Smooth Scroll Handler for all browsers
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
@@ -34,22 +33,17 @@ const App: React.FC = () => {
         if (!href) return;
 
         const targetId = href.substring(1);
-        // Handle '#' (top) specifically or search for the element
         const targetElement = targetId === "" 
           ? document.body 
           : document.getElementById(targetId);
 
         if (targetElement) {
           e.preventDefault();
-          
-          // Using scrollIntoView for modern and standard cross-browser smooth behavior
           targetElement.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
             inline: 'nearest'
           });
-
-          // Removed window.history.pushState to prevent SecurityError in sandboxed environments
         }
       }
     };
@@ -85,16 +79,11 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+// MOTOR DO REACT (Ajustado para não dar erro)
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>

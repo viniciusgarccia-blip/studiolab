@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Importações dos seus componentes
+// Importações dos seus componentes (Certifique-se que o nome do arquivo no GitHub é IGUAL a esses)
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -58,7 +57,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-cyan-500/30 overflow-x-hidden">
+    <div className="min-h-screen selection:bg-cyan-500/30 overflow-x-hidden bg-[#111] text-white">
       <Navbar isScrolled={isScrolled} />
       
       <main>
@@ -79,11 +78,10 @@ const App: React.FC = () => {
   );
 };
 
-// MOTOR DO REACT (Ajustado para não dar erro)
+// MOTOR DO REACT (Apenas uma vez no final)
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
+  ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <App />
     </React.StrictMode>

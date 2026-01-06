@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Primário -->
+    <title>Editor de Vídeo Profissional e Colorista DaVinci Resolve | Garcia Studio Lab</title>
+    <meta name="description" content="Contrate um Editor de Vídeo Profissional e Colorista DaVinci Resolve especializado em pós-produção de elite, color grading cinematográfico e edição narrativa de alto impacto." />
+    <meta name="keywords" content="editor de vídeo profissional, colorista DaVinci Resolve, pós-produção de vídeo, color grading cinematográfico, edição narrativa, Garcia Studio Lab, edição 4K HDR" />
+    <meta name="author" content="Garcia Studio Lab" />
+    <link rel="canonical" href="https://garciastudiolab.com.br" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://garciastudiolab.com.br" />
+    <meta property="og:title" content="Editor de Vídeo Profissional & Colorista DaVinci Resolve | Garcia Studio Lab" />
+    <meta property="og:description" content="Transforme seus vídeos com edição de elite e color grading cinematográfico. Workflow profissional em DaVinci Resolve." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://garciastudiolab.com.br" />
+    <meta property="twitter:title" content="Editor de Vídeo Profissional & Colorista DaVinci Resolve | Garcia Studio Lab" />
+    <meta property="twitter:description" content="Pós-produção de elite para marcas e criadores de conteúdo que buscam o padrão cinematográfico." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Espaçamento extra para a Navbar fixa */
+        scroll-padding-top: 100px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #050505;
+        color: white;
+      }
+      .font-serif {
+        font-family: 'Playfair+Display', serif;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #444;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes zoomIn {
+        from { transform: scale(0.95); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+
+      .animate-zoom-in {
+        animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+        50% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 0.6; }
+      }
+
+      @keyframes grain {
+        0%, 100% { transform: translate(0, 0); }
+        10% { transform: translate(-5%, -10%); }
+        20% { transform: translate(-15%, 5%); }
+        30% { transform: translate(7%, -25%); }
+        40% { transform: translate(-5%, 25%); }
+        50% { transform: translate(-15%, 10%); }
+        60% { transform: translate(15%, 0%); }
+        70% { transform: translate(0%, 15%); }
+        80% { transform: translate(3%, 35%); }
+        90% { transform: translate(-10%, 10%); }
+      }
+
+      .noise-bg {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+        opacity: 0.04;
+        pointer-events: none;
+        animation: grain 8s steps(10) infinite;
+        z-index: 1;
+      }
+
+      .floating-particle {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.4) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          scroll-behavior: smooth;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

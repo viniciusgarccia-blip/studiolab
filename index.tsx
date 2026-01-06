@@ -1,14 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-const App = () => {
-  return (
-    <div style={{ padding: '50px', textAlign: 'center' }}>
-      <h1 style={{ color: '#00ff00' }}>SISTEMA ATIVO</h1>
-      <p>Garcia Studio Lab - O React carregou!</p>
-    </div>
-  )
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Could not find root element to mount to");
 }
+
+const root = ReactDOM.createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

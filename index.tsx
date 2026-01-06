@@ -1,4 +1,3 @@
-import './index.css';
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { GoogleGenerativeAI } from "@google/generative-ai";

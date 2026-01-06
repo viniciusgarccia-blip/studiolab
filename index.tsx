@@ -1,85 +1,27 @@
+import React from 'react';
 
-import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import ColorGradingShowcase from './components/ColorGradingShowcase';
-import SocialProof from './components/SocialProof';
-import Tools from './components/Tools';
-import CaseStudy from './components/CaseStudy';
-import AIConsultant from './components/AIConsultant';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
-
-const App: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    // Global Smooth Scroll Handler for all browsers
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest('a');
-      
-      if (anchor && anchor.getAttribute('href')?.startsWith('#')) {
-        const href = anchor.getAttribute('href');
-        if (!href) return;
-
-        const targetId = href.substring(1);
-        // Handle '#' (top) specifically or search for the element
-        const targetElement = targetId === "" 
-          ? document.body 
-          : document.getElementById(targetId);
-
-        if (targetElement) {
-          e.preventDefault();
-          
-          // Using scrollIntoView for modern and standard cross-browser smooth behavior
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-            inline: 'nearest'
-          });
-
-          // Removed window.history.pushState to prevent SecurityError in sandboxed environments
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('click', handleAnchorClick);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('click', handleAnchorClick);
-    };
-  }, []);
-
+export default function App() {
   return (
-    <div className="min-h-screen selection:bg-cyan-500/30 overflow-x-hidden">
-      <Navbar isScrolled={isScrolled} />
-      
-      <main>
-        <Hero />
-        <SocialProof />
-        <About />
-        <Services />
-        <ColorGradingShowcase />
-        <Portfolio />
-        <CaseStudy />
-        <Tools />
-        <AIConsultant />
-        <ContactForm />
-      </main>
-
-      <Footer />
+    <div style={{ 
+      backgroundColor: '#000', 
+      color: '#fff', 
+      height: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column',
+      justifyContent: 'center', 
+      alignItems: 'center',
+      fontFamily: 'sans-serif' 
+    }}>
+      <h1>Garcia Studio Lab</h1>
+      <p>Site em construção - O deploy funcionou!</p>
+      <div style={{ 
+        padding: '20px', 
+        border: '1px solid #333', 
+        borderRadius: '8px',
+        marginTop: '20px' 
+      }}>
+        <p>Aguardando integração dos componentes...</p>
+      </div>
     </div>
   );
-};
-
-export default App;
+}

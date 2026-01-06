@@ -1,27 +1,29 @@
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-export default function App() {
+function App() {
   return (
     <div style={{ 
-      backgroundColor: '#000', 
-      color: '#fff', 
+      backgroundColor: '#111', 
+      color: 'white', 
       height: '100vh', 
       display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
       flexDirection: 'column',
-      justifyContent: 'center', 
-      alignItems: 'center',
-      fontFamily: 'sans-serif' 
+      fontFamily: 'sans-serif'
     }}>
-      <h1>Garcia Studio Lab</h1>
-      <p>Site em construção - O deploy funcionou!</p>
-      <div style={{ 
-        padding: '20px', 
-        border: '1px solid #333', 
-        borderRadius: '8px',
-        marginTop: '20px' 
-      }}>
-        <p>Aguardando integração dos componentes...</p>
-      </div>
+      <h1 style={{ fontSize: '3rem' }}>Garcia Studio Lab</h1>
+      <p style={{ color: '#888' }}>O site está online e o React foi carregado com sucesso!</p>
     </div>
-  );
+  )
+}
+
+const rootElement = document.getElementById('root')
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  )
 }
